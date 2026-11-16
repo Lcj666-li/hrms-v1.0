@@ -1,0 +1,17 @@
+# Web framework and ASGI server
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+
+# Data validation and database
+pydantic==2.11.4
+SQLAlchemy==2.0.40
+PyMySQL==1.1.1
+
+# Authentication and password security
+python-jose[cryptography]==3.4.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+
+# Environment configuration and form support
+python-dotenv==1.1.0
+python-multipart==0.0.20

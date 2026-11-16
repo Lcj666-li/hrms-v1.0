@@ -1,0 +1,15 @@
+services:
+  hrms-agent:
+    build: .
+    container_name: hrms-agent
+    ports:
+      - "8010:8010"
+    environment:
+      # 如果 HRMS 也跑在 Docker 里，改成服务名；本机则用 host.docker.internal
+      HRMS_BASE_URL: ${HRMS_BASE_URL:-http://host.docker.internal:8000}
+      AGENT_MYSQL_DSN: ${AGENT_MYSQL_DSN:-mysql+pymysql://root:123456@host.docker.internal:3306/hrms_agent?charset=utf8mb4}
+      AGENT_RATE_LIMIT: ${AGENT_RATE_LIMIT:-30}
+      KB_BASE_URL: ${KB_BASE_URL:-http://host.docker.internal:8080}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

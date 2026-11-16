@@ -1,0 +1,26 @@
+{"id": "t01", "role": "employee", "query": "我还有几天年假？", "expect_tool": "query_my_leave_balance", "expect_status": "ok"}
+{"id": "t02", "role": "employee", "query": "我的假期余额是多少", "expect_tool": "query_my_leave_balance", "expect_status": "ok"}
+{"id": "t03", "role": "employee", "query": "这个月我迟到几次？", "expect_tool": "query_my_attendance", "expect_status": "ok"}
+{"id": "t04", "role": "employee", "query": "2026-10 的考勤记录看一下", "expect_tool": "query_my_attendance", "expect_status": "ok"}
+{"id": "t05", "role": "employee", "query": "这个月工资发了吗？", "expect_tool": "query_my_salary", "expect_status": "ok"}
+{"id": "t06", "role": "employee", "query": "公司年假制度是怎么规定的？", "expect_tool": "search_policy", "expect_status": "ok"}
+{"id": "t07", "role": "employee", "query": "报销需要什么材料", "expect_tool": "search_policy", "expect_status": "ok"}
+{"id": "t08", "role": "manager", "query": "有哪些待审批的请假？", "expect_tool": "list_pending_approvals", "expect_status": "ok"}
+{"id": "t09", "role": "manager", "query": "加班调休是怎么规定的？", "expect_tool": "search_policy", "expect_status": "ok"}
+{"id": "t10", "role": "manager", "query": "现在有哪些等我审批的申请", "expect_tool": "list_pending_approvals", "expect_status": "ok"}
+{"id": "t11", "role": "employee", "query": "帮我请 2026-12-01 到 2026-12-03 的年假", "expect_tool": "submit_leave", "expect_status": "needs_confirmation"}
+{"id": "t12", "role": "employee", "query": "帮我请 2026-12-08 到 2026-12-08 的事假", "expect_tool": "submit_leave", "expect_status": "blocked"}
+{"id": "t13", "role": "manager", "query": "通过请假单 1", "expect_tool": "approve_leave", "expect_status": "needs_confirmation"}
+{"id": "t14", "role": "employee", "query": "有哪些待审批的请假？", "expect_tool": "list_pending_approvals", "expect_status": "denied"}
+{"id": "t15", "role": "employee", "query": "帮我批准 3 号请假单", "expect_tool": "approve_leave", "expect_status": "denied"}
+{"id": "t16", "role": "employee", "query": "通过请假单 2", "expect_tool": "approve_leave", "expect_status": "denied"}
+{"id": "t17", "role": "employee", "query": "今天天气怎么样", "expect_tool": null, "expect_status": "ok"}
+{"id": "t18", "role": "employee", "query": "我的年假还剩几天", "expect_tool": "query_my_leave_balance", "expect_status": "ok"}
+{"id": "t19", "role": "manager", "query": "我的年假还剩几天", "expect_tool": "query_my_leave_balance", "expect_status": "denied"}
+{"id": "t20", "role": "employee", "query": "查下我的休假情况", "expect_tool": "query_my_leave_balance", "expect_status": "ok"}
+{"id": "t21", "role": "employee", "query": "我上个月的出勤怎么样", "expect_tool": "query_my_attendance", "expect_status": "ok"}
+{"id": "t22", "role": "employee", "query": "这个月薪酬到账了吗", "expect_tool": "query_my_salary", "expect_status": "ok"}
+{"id": "t23", "role": "employee", "query": "帮我把 2026-12-05 到 2026-12-06 的调休提上去", "expect_tool": "submit_leave", "expect_status": "needs_confirmation"}
+{"id": "t24", "role": "manager", "query": "人事那边有哪些申请等我处理", "expect_tool": "list_pending_approvals", "expect_status": "ok"}
+{"id": "t25", "role": "manager", "query": "把审批列表拉出来看看", "expect_tool": "list_pending_approvals", "expect_status": "ok"}
+{"id": "t26", "role": "employee", "query": "帮我请 2026-12-28 到 2027-01-31 的年假", "expect_tool": "submit_leave", "expect_status": "blocked"}
