@@ -7,12 +7,20 @@
 
 from __future__ import annotations
 
+import os
 import random
 from datetime import date, datetime, timedelta
 
 import pymysql
 
-DB = dict(host="127.0.0.1", port=3306, user="root", password="123456", database="hrms", charset="utf8mb4")
+DB = dict(
+    host=os.getenv("HRMS_DB_HOST", "127.0.0.1"),
+    port=int(os.getenv("HRMS_DB_PORT", "3306")),
+    user=os.getenv("HRMS_DB_USER", "root"),
+    password=os.getenv("HRMS_DB_PASSWORD", "123456"),
+    database=os.getenv("HRMS_DB_NAME", "hrms"),
+    charset="utf8mb4",
+)
 EMPLOYEE_COUNT = 30
 random.seed(20261106)
 

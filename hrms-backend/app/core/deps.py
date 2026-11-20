@@ -9,7 +9,6 @@ from app.database import get_db
 from app.models.user import User
 
 
-# 从 Authorization 请求头中读取 Bearer Token。
 # tokenUrl 只是 OpenAPI 文档中“获取令牌”的地址，登录接口本身是 JSON 请求。
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")
 

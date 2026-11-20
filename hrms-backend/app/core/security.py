@@ -13,8 +13,6 @@ from passlib.context import CryptContext
 from app.config import settings
 
 
-# bcrypt 是专门为密码设计的慢哈希算法：同样密码每次加盐结果都不同，
-# 即使数据库泄露，攻击者也无法通过彩虹表批量还原明文密码。
 # deprecated="auto" 表示以后换成更强算法时，旧哈希仍可校验并自动升级。
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 

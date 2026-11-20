@@ -12,20 +12,10 @@ HRMS_BASE_URL = os.getenv("HRMS_BASE_URL", "http://127.0.0.1:8000")
 KB_BASE_URL = os.getenv("KB_BASE_URL", "http://127.0.0.1:8080").rstrip("/")
 KB_SUBJECT = os.getenv("KB_SUBJECT", "")
 
-def _user_env(name: str) -> str:
-    """读 Windows 用户级环境变量（避免把密钥写进代码或仓库）。"""
-    try:
-        import winreg
-        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as key:
-            value, _ = winreg.QueryValueEx(key, name)
-            return str(value)
-    except Exception:
-        return ""
-
 
 def _pick_key() -> str:
     for name in ("LLM_API_KEY", "DEEPSEEK_API_KEY", "DASHSCOPE_API_KEY", "OPENAI_API_KEY"):
-        value = os.getenv(name) or _user_env(name)
+        value = os.getenv(name)
         if value:
             return value
     return ""

@@ -8,6 +8,8 @@
 | `hrms-frontend` | Vue3 + TypeScript + Element Plus | 5173 | 员工端 + 管理端 + AI 助手抽屉 + Agent 运营面板 |
 | `hrms-agent` | FastAPI + DeepSeek Function Calling | 8010 | 7 个业务工具，规则 + LLM 混合规划，写操作人工确认 |
 
+制度问答工具对接 [知擎知识库](https://github.com/Lcj666-li/ZhiQing)（可选，不可用时自动降级）。
+
 ## 启动顺序
 
 ```bash

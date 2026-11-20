@@ -117,7 +117,7 @@ const departments = computed(() =>
 )
 
 const filteredEmployees = computed(() => {
-  // 所有筛选都在前端完成，适合当前毕业设计的数据规模。
+  // 数据量在数百条以内，前端筛选足够；规模增长后应改为后端分页 + 条件查询。
   const value = keyword.value.trim().toLowerCase()
   return employees.value.filter((employee) => {
     const matchesKeyword =

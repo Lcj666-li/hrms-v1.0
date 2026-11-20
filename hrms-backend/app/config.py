@@ -32,20 +32,17 @@ class Settings:
         "DATABASE_URL",
         "mysql+pymysql://root:123456@127.0.0.1:3306/hrms?charset=utf8mb4",
     )
-    # 连接串格式：mysql+pymysql://用户名:密码@主机:端口/数据库名?字符集
     # charset=utf8mb4 用于支持中文和 emoji，避免姓名、公告内容出现乱码。
 
     JWT_SECRET_KEY: str = os.getenv(
         "JWT_SECRET_KEY",
         "hrms-change-this-secret-key-in-production",
     )
-    # JWT 密钥用于签名和验签。只要密钥不同，别人伪造的令牌就无法通过校验。
     # 默认值只方便本地运行，正式部署必须改成随机长字符串。
     JWT_ALGORITHM: str = os.getenv("JWT_ALGORITHM", "HS256")
     ACCESS_TOKEN_EXPIRE_MINUTES: int = int(
         os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", str(24 * 60))
     )
-    # 24 * 60 分钟 = 24 小时，与需求中的“令牌 24 小时过期”一致。
 
     # 前后端分离时浏览器会先发 OPTIONS 预检请求，后端必须显式允许前端地址访问。
     # localhost 和 127.0.0.1 在浏览器看来是两个不同的来源，所以两个都要写。
